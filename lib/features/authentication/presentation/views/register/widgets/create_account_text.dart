@@ -1,17 +1,17 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/styles.dart';
+import '../../../../../../core/theming/styles.dart';
 
-class WelcomeBackText extends StatelessWidget {
-  const WelcomeBackText({
+class CreateAccountText extends StatelessWidget {
+  const CreateAccountText({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Welcome Back',
+      'Create Your Account',
       style: MyStyles.font24BlackBold,
     );
   }

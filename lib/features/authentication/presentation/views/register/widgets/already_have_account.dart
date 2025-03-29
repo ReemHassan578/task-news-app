@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:task_news_app/core/routing/routes.dart';
 
-import '../../../../../core/theming/styles.dart';
+import '../../../../../../core/theming/styles.dart';
 
-class DontHaveAccount extends StatelessWidget {
-  const DontHaveAccount({
+class AlreadyHaveAccount extends StatelessWidget {
+  const AlreadyHaveAccount({
     super.key,
   });
 
@@ -15,17 +15,17 @@ class DontHaveAccount extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('don\'t have an account ?',
+        Text('already have an account ?',
             style: MyStyles.font14GreyNormal
                 .copyWith(color: Colors.black)),
         TextButton(
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(
-             Routes.register
+             Routes.login
             );
           },
           child: Text(
-            'Register',
+            'Login',
             style: MyStyles.font14GreyNormal,
           ),
         ),

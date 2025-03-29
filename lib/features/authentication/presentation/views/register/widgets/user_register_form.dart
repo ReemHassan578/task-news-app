@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../../../core/widgets/custom_text_form_field.dart';
 
 class UserRegisterForm extends StatelessWidget {
   const UserRegisterForm({
@@ -28,6 +28,7 @@ class UserRegisterForm extends StatelessWidget {
             if (name == null || name.isEmpty) {
               return 'Please enter your name';
             }
+            return null;
 
           }, controller: nameController, keyboardType: TextInputType.text, prefixIcon: Icon(Icons.person),),
           CustomTextFormField(

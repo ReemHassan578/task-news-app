@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../widgets/sign_with_google_button.dart';
 import 'widgets/login_custom_button.dart';
 import 'widgets/dont_have_account.dart';
 import 'widgets/user_login_form.dart';
-import 'widgets/welcome_back_Text.dart';
+import 'widgets/welcome_back_text.dart';
 
 class LoginScreen extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -30,7 +32,17 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    LoginCustomButton(formKey: formKey),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        LoginCustomButton(
+                          formKey: formKey,
+                          emailController: emailController,
+                          passwordController: passwordController,
+                        ),
+                        SignWithGoogleButton(),
+                      ],
+                    ),
                     DontHaveAccount(),
                   ],
                 ),

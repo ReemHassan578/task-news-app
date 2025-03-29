@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task_news_app/features/home/home_screen.dart';
 
-import '../../features/authentication/login/presentation/login_screen.dart';
-import '../../features/authentication/register/presentation/register_screen.dart';
+import '../../features/authentication/presentation/views/login/login_screen.dart';
+import '../../features/authentication/presentation/views/register/register_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
