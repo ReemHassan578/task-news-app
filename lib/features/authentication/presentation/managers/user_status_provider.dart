@@ -22,7 +22,13 @@ class UserStatusNotifier extends StateNotifier<User?> {
   }
 
   Future<void> signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    
+    // Force sign out to allow account selection
+    await googleSignIn.signOut();
+
+    final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+
     if (googleUser == null) {
       state = null;
       return;

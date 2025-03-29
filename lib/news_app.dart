@@ -7,7 +7,7 @@ import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
 import 'features/authentication/presentation/managers/user_status_provider.dart';
 import 'features/authentication/presentation/views/login/login_screen.dart';
-import 'features/home/home_screen.dart';
+import 'features/home/presentation/views/home_screen.dart';
 
 class NewsApp extends ConsumerWidget {
    final AppRouter appRouter;
