@@ -12,6 +12,11 @@
 .swiftpm/
 migrate_working_dir/
 
+# Ignore Firebase Config Files
+android/app/google-services.json
+
+lib/firebase_options.dart
+
 # IntelliJ related
 *.iml
 *.ipr
