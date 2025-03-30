@@ -19,7 +19,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
  @override
   void initState() {
     super.initState();
-  //  ref.read(articlesProvider.notifier).fetchArticles();
+    ref.read(articlesProvider.notifier).fetchArticles();
   }
   @override
   Widget build(BuildContext context,) {

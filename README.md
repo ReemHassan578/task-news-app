@@ -89,3 +89,7 @@ home screen UI
 
 search feature
 ![alt text](demo_screenshots/search.jpeg)
+
+
+demo_link 
+[demo_video](https://drive.google.com/file/d/1uIS-ficFFvS_ttLtZaUeY2sOF1vGQP2i/view?usp=drive_link)
