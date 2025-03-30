@@ -20,8 +20,8 @@ class _HomeApiService implements HomeApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AllNewsResponseModel> getAllNews({
-    String apiKey = 'bb3cd198fd96432cad3d9b18df23e4a0',
+  Future<AllNewsResponseModel> getAllNews(
+    String apiKey, {
     String country = 'us',
   }) async {
     final _extra = <String, dynamic>{};

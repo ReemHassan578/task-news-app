@@ -14,4 +14,5 @@ abstract class HomeApiService {
 @GET(ApiEndPoints.allNews)
   Future<AllNewsResponseModel> getAllNews(@Query("apiKey") String apiKey,{ @Query("country") String country='us'});
 
+
 }

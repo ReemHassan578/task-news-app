@@ -12,6 +12,9 @@
 .swiftpm/
 migrate_working_dir/
 
+
+.env
+
 # Ignore Firebase Config Files
 android/app/google-services.json
 
