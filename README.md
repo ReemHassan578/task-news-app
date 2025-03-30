@@ -14,9 +14,7 @@ flutter pub get
 
 - Add API Key
 This project requires an API key to fetch news articles. Create a .env file in the root directory and add
-API_KEY=your_api_key_here
-
-free apiKey is get from https://newsapi.org/
+API_KEY=your_api_key_here. Free apiKey is get from https://newsapi.org/
 
 - Firebase Setup
 This project uses Firebase for authentication using Google or Email/Password. Since Firebase configuration files are not included for security reasons, follow these steps:
@@ -65,9 +63,12 @@ flutter run
 
 
 
+
 ## firebase backend validation
 
+
 ![alt text](demo_screenshots/backvalid.jpeg)
+
 
 
 
