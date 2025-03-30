@@ -47,49 +47,63 @@ flutter run
 - using riverpod to manages the user's authentication, stores and updates the user's authentication status and listens for changes in user state (e.g., sign in with email/password - Google , register new user  or sign out)
 
 
-login screen
+# login screen
 
-login screen UI
+## login screen UI
+
 ![alt text](demo_screenshots/login.jpeg)
 
-app validation
+
+
+## app validation
+
 ![alt text](demo_screenshots/loginvalid1.jpeg)
+
 
 ![alt text](demo_screenshots/loginvalid2.jpeg)
 
 
-firebase backend validation
+
+
+## firebase backend validation
+
 ![alt text](demo_screenshots/backvalid.jpeg)
 
 
 
 
-register screen
+# register screen
 
-register screen UI
+## register screen UI
+
 ![alt text](demo_screenshots/register.jpeg)
 
-google sign in 
+
+## google sign in 
+
 ![alt text](demo_screenshots/google.jpeg)
 
 
 
-Home :
+# Home :
+
 - data layer contains home api service that fetches news from free news Api, models that represents response of that api call and home repo that return the result indicating either a successful api call or a failure 
 
 - domain layer contains article entity which will be used in the UI
 
 - presentation layer contains home Screen with an articles provider that manages fetching all articles or searching for a certain topic. Searching is handled using debounce to prevent redundant API calls and reduce server load.
 
-home screen
 
-home screen UI
+## home screen UI
+
 ![alt text](demo_screenshots/news.jpeg)
 
 
-search feature
+# search feature
+
 ![alt text](demo_screenshots/search.jpeg)
 
 
-demo_link 
+
+
 [demo_video](https://drive.google.com/file/d/1uIS-ficFFvS_ttLtZaUeY2sOF1vGQP2i/view?usp=drive_link)
