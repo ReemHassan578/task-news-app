@@ -1,24 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:task_news_app/features/home/domain/entities/article_entity.dart';
+import '../managers/articles_provider.dart';
+import 'widgets/articles_list_view.dart';
+import 'widgets/fetch_articles_status_widget.dart';
+import 'widgets/search_bar.dart';
+import 'widgets/sign_out_button.dart';
 
-import '../../../authentication/presentation/managers/user_status_provider.dart';
-
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context,ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+ 
+ @override
+  void initState() {
+    super.initState();
+    ref.read(articlesProvider.notifier).fetchArticles();
+  }
+  @override
+  Widget build(BuildContext context,) {
+    ref.listen<AsyncValue<List<ArticleEntity>>>(articlesProvider, (previous, next) {
+      next.whenOrNull(
+        error: (message, _) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(message.toString())),
+          );
+        },
+      );
+    });
     return Scaffold(
       body: SafeArea(
-        child: 
-        Column(
-          children: [
-            SearchBar(),
-            ElevatedButton(onPressed: ()async{await ref.read(userStatusProvider.notifier).signOut();
-            }, child: Text('Logout'),),
-          ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
+          child: Column(
+            spacing: 20.h,
+            children: [
+              CustomSearchBar(),
+ FetchArticlesStatusWidget(),
+              
+                 
+              SignOutButton(),
+            ],
+          ),
+
+
+                      
+
         ),
       ),
     );
   }
 }
+

@@ -22,13 +22,10 @@ class _HomeApiService implements HomeApiService {
   @override
   Future<AllNewsResponseModel> getAllNews(
     String apiKey, {
-    String country = 'us',
+    String q = 'bitcoin',
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'apiKey': apiKey,
-      r'country': country,
-    };
+    final queryParameters = <String, dynamic>{r'apiKey': apiKey, r'q': q};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<AllNewsResponseModel>(

@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'api_error_model.dart';
 
 class ApiErrorHandler {
-    static ApiErrorModel handle(dynamic error) {
+  static ApiErrorModel handle(dynamic error) {
     if (error is DioException) {
       switch (error.type) {
         case DioExceptionType.badResponse:
@@ -34,18 +34,16 @@ class ApiErrorHandler {
           return ApiErrorModel(message: 'Something went wrong');
       }
     } else {
+      print(error);
       return ApiErrorModel(message: "Unexpected error occurred");
     }
   }
 
-
-static ApiErrorModel _handleError(dynamic responseErrorData) {  
-  return ApiErrorModel(
-    status: responseErrorData['status'],
-    code: responseErrorData['code'],
-    message: responseErrorData['message'],
-  );
-
-
+  static ApiErrorModel _handleError(dynamic responseErrorData) {
+    return ApiErrorModel(
+      status: responseErrorData['status'],
+      code: responseErrorData['code'],
+      message: responseErrorData['message'],
+    );
   }
 }
