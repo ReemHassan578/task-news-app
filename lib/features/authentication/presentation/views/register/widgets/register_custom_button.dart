@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:task_news_app/features/authentication/presentation/managers/user_status_provider.dart';
-
-import '../../../../../../core/routing/routes.dart';
+import '../../../managers/user_status_provider.dart';
 import '../../../../../../core/widgets/custom_button.dart';
 
 class RegisterCustomButton extends ConsumerWidget {
@@ -18,25 +16,22 @@ class RegisterCustomButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-     final navigator = Navigator.of(context);
-  final scaffoldMessenger = ScaffoldMessenger.of(context);
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    final navigator = Navigator.of(context);
 
     return CustomButton(
       text: 'Register',
-      onTap: () async{
+      onTap: () async {
         if (formKey.currentState!.validate()) {
-        try{
-          await ref
-              .read(userStatusProvider.notifier)
-              .registerUser(emailController.text, passwordController.text);
-                      //    navigator.pushReplacementNamed(Routes.home);
-              }catch(error){
-scaffoldMessenger
+          try {
+            await ref
+                .read(userStatusProvider.notifier)
+                .registerUser(emailController.text, passwordController.text);
+            navigator.pop();
+          } catch (error) {
+            scaffoldMessenger
                 .showSnackBar(SnackBar(content: Text(error.toString())));
-         
-              }
-              
-        
+          }
         }
       },
     );

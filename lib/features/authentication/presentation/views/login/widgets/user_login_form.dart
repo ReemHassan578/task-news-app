@@ -24,7 +24,7 @@ class UserLoginForm extends StatelessWidget {
           CustomTextFormField(
             keyboardType: TextInputType.emailAddress,
             controller: emailController,
-            prefixIcon: Icon(Icons.email),
+            prefixIcon: const Icon(Icons.email),
             hintText: 'Email',validator: (value) {
             if (value == null || value.isEmpty) {
               return 'Please enter your email';
@@ -39,7 +39,7 @@ class UserLoginForm extends StatelessWidget {
             controller: passwordController,
             keyboardType: TextInputType.visiblePassword
             ,
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: const Icon(Icons.lock),
             isPassword:true  ,
             hintText: 'Password',validator: (value) {
             if (value == null || value.isEmpty) {

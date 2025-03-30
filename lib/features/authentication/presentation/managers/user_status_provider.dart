@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class UserStatusNotifier extends StateNotifier<User?> {
-  UserStatusNotifier() : super(null) {
+  UserStatusNotifier() : super(FirebaseAuth.instance.currentUser) {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       state = user;
     });
@@ -54,3 +54,8 @@ final userStatusProvider = StateNotifierProvider<UserStatusNotifier, User?>(
     return UserStatusNotifier();
   },
 );
+
+
+// final userStatusProvider = StreamProvider<User?>((ref) {
+//   return FirebaseAuth.instance.authStateChanges();
+// });

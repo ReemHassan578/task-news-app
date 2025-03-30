@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task_news_app/core/theming/styles.dart';
-import 'package:task_news_app/features/home/domain/entities/article_entity.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../domain/entities/article_entity.dart';
 
 class ArticleItem extends StatelessWidget {
   final ArticleEntity article;
@@ -24,6 +24,7 @@ class ArticleItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(10.r),
               child: CachedNetworkImage(
+                errorWidget: (context, url, error) => const Icon(Icons.error),
                 height: double.infinity,
                 width: 120.w,
                 fit: BoxFit.cover,

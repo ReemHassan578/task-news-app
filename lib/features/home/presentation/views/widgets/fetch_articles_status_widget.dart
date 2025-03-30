@@ -12,10 +12,10 @@ class FetchArticlesStatusWidget extends ConsumerWidget {
     AsyncValue<List<ArticleEntity>> articles = ref.watch(articlesProvider);
 
     return articles.when(
-      data: (data) => ArticlesListView(),
+      data: (data) => const ArticlesListView(),
       loading: () =>
-          Expanded(child: Center(child: CircularProgressIndicator())),
-      error: (error, stackTrace) => Expanded(child: SizedBox.shrink()),
+          const Expanded(child: Center(child: CircularProgressIndicator())),
+      error: (error, stackTrace) => const Expanded(child: SizedBox.shrink()),
     );
   }
 }

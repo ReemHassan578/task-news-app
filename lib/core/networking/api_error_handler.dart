@@ -9,33 +9,32 @@ class ApiErrorHandler {
         case DioExceptionType.badResponse:
           return _handleError(error.response?.data);
         case DioExceptionType.connectionTimeout:
-          return ApiErrorModel(message: "Connection timeout with the server");
+          return const ApiErrorModel(message: "Connection timeout with the server");
 
         case DioExceptionType.connectionError:
-          return ApiErrorModel(message: "Connection to server failed");
+          return const ApiErrorModel(message: "Connection to server failed");
 
         case DioExceptionType.receiveTimeout:
-          return ApiErrorModel(
+          return const ApiErrorModel(
               message: "Receive timeout in connection with the server");
 
         case DioExceptionType.unknown:
-          return ApiErrorModel(
+          return const ApiErrorModel(
               message:
                   "Connection to the server failed due to internet connection");
 
         case DioExceptionType.cancel:
-          return ApiErrorModel(message: "Request to the server was cancelled");
+          return const ApiErrorModel(message: "Request to the server was cancelled");
 
         case DioExceptionType.sendTimeout:
-          return ApiErrorModel(
+          return const ApiErrorModel(
               message: "Send timeout in connection with the server");
 
         default:
-          return ApiErrorModel(message: 'Something went wrong');
+          return const ApiErrorModel(message: 'Something went wrong');
       }
     } else {
-      print(error);
-      return ApiErrorModel(message: "Unexpected error occurred");
+      return const ApiErrorModel(message: "Unexpected error occurred");
     }
   }
 

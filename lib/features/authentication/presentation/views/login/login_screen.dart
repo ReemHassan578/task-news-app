@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../widgets/sign_with_google_button.dart';
 import 'widgets/login_custom_button.dart';
 import 'widgets/dont_have_account.dart';
 import 'widgets/user_login_form.dart';
 import 'widgets/welcome_back_text.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+
+ const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
-  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +32,7 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 40.sp,
               children: [
-                WelcomeBackText(),
+                const WelcomeBackText(),
                 UserLoginForm(
                   formKey: formKey,
                   emailController: emailController,
@@ -40,10 +48,10 @@ class LoginScreen extends StatelessWidget {
                           emailController: emailController,
                           passwordController: passwordController,
                         ),
-                        SignWithGoogleButton(),
+                        const SignWithGoogleButton(),
                       ],
                     ),
-                    DontHaveAccount(),
+                    const DontHaveAccount(),
                   ],
                 ),
               ],
@@ -52,5 +60,13 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
+  
+  }
+  @override
+  void dispose() {
+emailController.dispose();
+passwordController.dispose();
+
+    super.dispose();
   }
 }

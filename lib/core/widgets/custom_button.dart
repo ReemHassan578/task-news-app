@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task_news_app/core/theming/styles.dart';
+import '../theming/styles.dart';
 
 import '../theming/colors.dart';
 

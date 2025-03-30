@@ -20,12 +20,16 @@ class _HomeApiService implements HomeApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AllNewsResponseModel> getAllNews(
+  Future<AllNewsResponseModel> getNews(
     String apiKey, {
-    String q = 'bitcoin',
+    String? searchTerm,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'apiKey': apiKey, r'q': q};
+    final queryParameters = <String, dynamic>{
+      r'apiKey': apiKey,
+      r'q': searchTerm,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<AllNewsResponseModel>(

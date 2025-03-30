@@ -60,13 +60,16 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         hintStyle: MyStyles.font14GreyNormal,
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(color: MyColors.defaultColor)),
+            borderSide: const BorderSide(color: MyColors.defaultColor)),
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(color: MyColors.errorColor)),
+            borderSide: const BorderSide(color: MyColors.errorColor)),
+            focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.r),
+            borderSide: const BorderSide(color: MyColors.errorColor)),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(color: MyColors.grey)),
+            borderSide: const BorderSide(color: MyColors.grey)),
       ),
     );
   }

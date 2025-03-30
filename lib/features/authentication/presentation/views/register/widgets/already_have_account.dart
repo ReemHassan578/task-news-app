@@ -1,8 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:task_news_app/core/routing/routes.dart';
-
 import '../../../../../../core/theming/styles.dart';
 
 class AlreadyHaveAccount extends StatelessWidget {
@@ -20,9 +18,7 @@ class AlreadyHaveAccount extends StatelessWidget {
                 .copyWith(color: Colors.black)),
         TextButton(
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed(
-             Routes.login
-            );
+            Navigator.of(context).pop();
           },
           child: Text(
             'Login',

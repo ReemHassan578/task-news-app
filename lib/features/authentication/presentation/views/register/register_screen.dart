@@ -6,13 +6,21 @@ import 'widgets/create_account_text.dart';
 import 'widgets/register_custom_button.dart';
 import 'widgets/user_register_form.dart';
 
-class RegisterScreen extends StatelessWidget {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController nameController = TextEditingController();
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
-  RegisterScreen({super.key});
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController emailController = TextEditingController();
+
+  final TextEditingController passwordController = TextEditingController();
+
+  final TextEditingController nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,7 @@ class RegisterScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 40.sp,
                 children: [
-                  CreateAccountText(),
+                  const CreateAccountText(),
                   UserRegisterForm(
                     formKey: formKey,
                     emailController: emailController,
@@ -43,10 +51,10 @@ class RegisterScreen extends StatelessWidget {
                             emailController: emailController,
                             passwordController: passwordController,
                           ),
-                          SignWithGoogleButton(),
+                          const SignWithGoogleButton(),
                         ],
                       ),
-                      AlreadyHaveAccount(),
+                      const AlreadyHaveAccount(),
                     ],
                   ),
                 ],
@@ -56,5 +64,13 @@ class RegisterScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    nameController.dispose();
+    super.dispose();
   }
 }

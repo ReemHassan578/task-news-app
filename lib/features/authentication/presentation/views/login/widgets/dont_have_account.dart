@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:task_news_app/core/routing/routes.dart';
+import '../../../../../../core/routing/routes.dart';
 
 import '../../../../../../core/theming/styles.dart';
 
@@ -20,7 +20,7 @@ class DontHaveAccount extends StatelessWidget {
                 .copyWith(color: Colors.black)),
         TextButton(
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed(
+            Navigator.of(context).pushNamed(
              Routes.register
             );
           },

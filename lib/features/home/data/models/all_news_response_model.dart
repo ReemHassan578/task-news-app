@@ -24,7 +24,7 @@ const  AllNewsResponseModel(
 
          var articleEntities = articles
         .map(
-          (article) => ArticleEntity(description: article.description??'no description',  title: article.title?? "no title" , urlToImage: article.urlToImage??'https://fastly.picsum.photos/id/813/200/300.jpg?hmac=D5xik3d3YUFq2gWtCzrQZs6zuAcmSvgqdZb063ezs4U')
+          (article) => ArticleEntity(description: article.description??'no description',  title: article.title?? "no title" , urlToImage: article.urlToImage??'')
      
         )
         .toList();
