@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:task_news_app/core/networking/api_error_handler.dart';
 import 'package:task_news_app/features/home/data/api_service/home_api_service.dart';
 import 'package:task_news_app/features/home/data/models/all_news_response_model.dart';
@@ -13,7 +14,7 @@ class HomeRepo {
   Future<ApiResult<List<ArticleEntity>>> fetchAllNews() async {
     try {
       AllNewsResponseModel allNewsAppResponse =
-          await fetchAllNewsService.getAllNews();
+          await fetchAllNewsService.getAllNews("${dotenv.env['API_KEY']}");
 
       List<ArticleEntity> articleEntities =
           allNewsAppResponse.mapToArticleEntities();

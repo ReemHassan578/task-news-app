@@ -13,7 +13,7 @@ class HomeScreen extends ConsumerWidget {
         child: 
         Column(
           children: [
-            
+            SearchBar(),
             ElevatedButton(onPressed: ()async{await ref.read(userStatusProvider.notifier).signOut();
             }, child: Text('Logout'),),
           ],

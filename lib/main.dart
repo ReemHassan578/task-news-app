@@ -5,10 +5,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'core/di/dependency_injection.dart';
 import 'firebase_options.dart';
 import 'news_app.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
+  await dotenv.load();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

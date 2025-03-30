@@ -12,6 +12,6 @@ abstract class HomeApiService {
     factory HomeApiService(Dio dio, {String baseUrl}) = _HomeApiService;
 
 @GET(ApiEndPoints.allNews)
-  Future<AllNewsResponseModel> getAllNews({@Query("apiKey") String apiKey='bb3cd198fd96432cad3d9b18df23e4a0', @Query("country") String country='us'});
+  Future<AllNewsResponseModel> getAllNews(@Query("apiKey") String apiKey, {@Query("country") String country='us'});
 
 }
